@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { FaPaperPlane, FaHandsHelping, FaCalendarAlt, FaEnvelope, FaUser, FaTag, FaCommentAlt } from 'react-icons/fa';
+import { FaPaperPlane, FaHandsHelping, FaCalendarAlt, FaEnvelope, FaUser, FaTag, FaCommentAlt, FaSpinner } from 'react-icons/fa';
+import { api } from '../api/client';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -16,22 +17,11 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const json = await res.json();
-
-      if (res.ok) {
-        toast.success('Your message has been sent successfully. We will get back to you shortly.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        toast.error(json.error || 'Failed to send message. Please try again.');
-      }
-    } catch {
-      toast.error('There was a network issue. Please check your connection and try again.');
+      const res = await api.post('/contact', formData);
+      toast.success(res.data?.message || 'Your message has been sent successfully. We will get back to you shortly.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -128,8 +118,15 @@ export default function ContactForm() {
           </div>
 
           <button type="submit" disabled={loading} className="btn btn-primary btn-full submit-btn">
-            <FaPaperPlane className="btn-icon" />
-            {loading ? 'Sending Your Message...' : 'Send Message'}
+            {loading ? (
+              <>
+                <FaSpinner className="btn-icon spinner-icon" /> Sending Message...
+              </>
+            ) : (
+              <>
+                <FaPaperPlane className="btn-icon" /> Send Message
+              </>
+            )}
           </button>
         </form>
       </div>
