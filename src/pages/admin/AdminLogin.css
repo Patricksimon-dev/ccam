@@ -110,20 +110,20 @@
   font-size: 1rem;
   font-weight: 700;
   border-radius: 12px;
-  background: linear-gradient(135deg, #4c1d95 0%, #3b0764 100%);
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
   color: #ffffff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 14px rgba(76, 29, 149, 0.25);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .login-submit-btn:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(76, 29, 149, 0.4);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.45);
 }
 
 .login-submit-btn:disabled {

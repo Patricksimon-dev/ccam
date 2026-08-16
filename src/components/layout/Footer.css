@@ -1,6 +1,6 @@
 .site-footer {
-  background: linear-gradient(180deg, #181004 0%, #0d0802 100%);
-  border-top: 1px solid rgba(212, 161, 27, 0.25);
+  background: #fef9c3;
+  border-top: 3px solid var(--gold);
   color: var(--text);
   margin-top: 4rem;
   position: relative;
@@ -13,8 +13,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #d4a11b, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d97706, transparent);
 }
 
 .footer-inner {
@@ -38,21 +38,21 @@
 }
 
 .footer-logo {
-  width: 76px;
+  width: 80px;
   height: auto;
-  filter: drop-shadow(0 4px 12px rgba(212, 161, 27, 0.3));
+  filter: drop-shadow(0 4px 10px rgba(217, 119, 6, 0.2));
 }
 
 .footer-title {
-  color: #fff3c4;
+  color: #291405;
   margin: 0 0 0.6rem;
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.3;
 }
 
 .footer-tagline {
-  color: var(--text-muted);
+  color: #78350f;
   font-size: 0.88rem;
   line-height: 1.6;
   margin: 0;
@@ -60,10 +60,10 @@
 }
 
 .footer-heading {
-  color: var(--gold);
+  color: #78350f;
   margin: 0 0 1.25rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   position: relative;
@@ -76,7 +76,7 @@
   bottom: 0;
   left: 0;
   width: 32px;
-  height: 2px;
+  height: 3px;
   background: var(--gold);
   border-radius: 2px;
 }
@@ -91,9 +91,10 @@
 }
 
 .footer-nav-link {
-  color: var(--text);
+  color: #451a03;
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -107,7 +108,7 @@
 }
 
 .footer-nav-link:hover {
-  color: #fff3c4;
+  color: var(--purple);
   transform: translateX(4px);
 }
 
@@ -124,17 +125,18 @@
   align-items: flex-start;
   gap: 0.65rem;
   line-height: 1.5;
-  color: var(--text);
+  color: #451a03;
 }
 
 .footer-contact-list a {
-  color: var(--text);
+  color: #451a03;
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-contact-list a:hover {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 .footer-icon {
@@ -159,13 +161,14 @@
 
 .schedule-item strong {
   display: block;
-  color: #fff3c4;
+  color: #291405;
   font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .schedule-item span {
   display: block;
-  color: var(--text-muted);
+  color: #78350f;
   font-size: 0.82rem;
 }
 
@@ -177,10 +180,10 @@
 
 .social-label {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: #78350f;
 }
 
 .footer-social-icons {
@@ -196,23 +199,23 @@
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
-  color: #fff3c4;
-  background: rgba(212, 161, 27, 0.1);
-  border: 1px solid rgba(212, 161, 27, 0.3);
-  transition: all 0.25 ease;
+  color: #78350f;
+  background: #ffffff;
+  border: 1px solid #fde68a;
+  transition: all 0.25s ease;
 }
 
 .footer-social-link:hover {
-  color: #120b02;
+  color: #ffffff;
   background: var(--gold);
   border-color: var(--gold);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 161, 27, 0.3);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 6, 2, 0.95);
+  border-top: 1px solid #fde68a;
+  background: #ffffff;
   padding: 1.2rem 1.5rem;
 }
 
@@ -225,7 +228,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #78350f;
 }
 
 .footer-bottom p {
@@ -244,8 +247,8 @@
   gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--gold), #f0c65b);
-  color: #120b02;
+  background: linear-gradient(135deg, var(--gold), #b45309);
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.8rem;
   text-decoration: none;
@@ -257,14 +260,15 @@
 }
 
 .admin-link {
-  color: rgba(255, 255, 255, 0.35);
+  color: #78350f;
   text-decoration: none;
   font-size: 0.8rem;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .admin-link:hover {
-  color: var(--gold);
+  color: var(--purple);
 }
 
 @media (max-width: 768px) {
