@@ -91,7 +91,7 @@
 }
 
 .footer-nav-link {
-  color: var(--text);
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -108,7 +108,7 @@
 }
 
 .footer-nav-link:hover {
-  color: var(--purple);
+  color: var(--gold);
   transform: translateX(4px);
 }
 
@@ -125,18 +125,18 @@
   align-items: flex-start;
   gap: 0.65rem;
   line-height: 1.5;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .footer-contact-list a {
-  color: var(--text);
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-contact-list a:hover {
-  color: var(--purple);
+  color: var(--gold);
 }
 
 .footer-icon {
@@ -260,7 +260,7 @@
 }
 
 .admin-link {
-  color: var(--gold-dark);
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 600;
@@ -268,7 +268,7 @@
 }
 
 .admin-link:hover {
-  color: var(--purple);
+  color: var(--gold);
 }
 
 @media (max-width: 768px) {

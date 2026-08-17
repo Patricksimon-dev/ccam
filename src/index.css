@@ -16,9 +16,9 @@
   --white: #ffffff;
 
   /* Typography */
-  --text: #2e1065;
-  --text-h: #1e0438;
-  --text-muted: #581c87;
+  --text: #ffffff;
+  --text-h: #f59e0b;
+  --text-muted: #fef9c3;
 
   /* Main Website Background: Radiant Gold Warm Gradient */
   --bg: linear-gradient(135deg, #fffbeb 0%, #fde047 35%, #f59e0b 75%, #d97706 100%);
@@ -222,6 +222,7 @@ a {
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   text-align: left;
+  color: #ffffff;
 }
 
 .bank-transfer-card {
@@ -264,6 +265,7 @@ a {
 .content-card h2 {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
+  color: var(--gold);
 }
 
 .card-header {
@@ -297,7 +299,7 @@ a {
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   background: var(--bg-alt);
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .badge-gold {
@@ -323,8 +325,8 @@ a {
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 1rem;
-  background: var(--primary);
-  color: white;
+  background: var(--gold);
+  color: #2e1065;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -332,7 +334,8 @@ a {
 }
 
 .media-btn:hover {
-  background: var(--primary-dark);
+  background: var(--gold-dark);
+  color: #ffffff;
 }
 
 .activity-card {
@@ -342,8 +345,8 @@ a {
 }
 
 .activity-day {
-  background: var(--primary);
-  color: white;
+  background: var(--gold);
+  color: #2e1065;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
   font-weight: 600;
@@ -373,7 +376,7 @@ a {
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--gold-dark);
+  color: #2e1065;
   text-transform: uppercase;
 }
 
@@ -381,7 +384,7 @@ a {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--gold);
   line-height: 1.1;
 }
 
@@ -892,7 +895,7 @@ textarea.form-input {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -1003,7 +1006,7 @@ textarea.form-input {
 .announcement-title {
   margin: 0 0 0.4rem;
   font-size: 1.35rem;
-  color: var(--gold-light);
+  color: var(--gold);
   font-weight: 700;
 }
 
@@ -1033,7 +1036,7 @@ textarea.form-input {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.7;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .empty-state-card {

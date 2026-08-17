@@ -28,7 +28,7 @@
 
 .about-hero-card h2 {
   margin: 0 0 1rem;
-  color: var(--gold-light);
+  color: var(--gold);
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -84,7 +84,7 @@
 .about-card h3 {
   margin: 0 0 0.65rem;
   font-size: 1.25rem;
-  color: var(--gold-light);
+  color: var(--gold);
   font-weight: 700;
 }
 
@@ -92,7 +92,7 @@
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .scripture-callout-card {
