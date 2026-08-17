@@ -1,5 +1,5 @@
 .site-footer {
-  background: #fef9c3;
+  background: var(--gold-light);
   border-top: 3px solid var(--gold);
   color: var(--text);
   margin-top: 4rem;
@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #d97706, transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
 }
 
 .footer-inner {
@@ -44,7 +44,7 @@
 }
 
 .footer-title {
-  color: #291405;
+  color: var(--text);
   margin: 0 0 0.6rem;
   font-size: 1.15rem;
   font-weight: 800;
@@ -52,7 +52,7 @@
 }
 
 .footer-tagline {
-  color: #78350f;
+  color: var(--gold-dark);
   font-size: 0.88rem;
   line-height: 1.6;
   margin: 0;
@@ -60,7 +60,7 @@
 }
 
 .footer-heading {
-  color: #78350f;
+  color: var(--gold-dark);
   margin: 0 0 1.25rem;
   font-size: 1rem;
   font-weight: 800;
@@ -91,7 +91,7 @@
 }
 
 .footer-nav-link {
-  color: #451a03;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -125,11 +125,11 @@
   align-items: flex-start;
   gap: 0.65rem;
   line-height: 1.5;
-  color: #451a03;
+  color: var(--text);
 }
 
 .footer-contact-list a {
-  color: #451a03;
+  color: var(--text);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -161,14 +161,14 @@
 
 .schedule-item strong {
   display: block;
-  color: #291405;
+  color: var(--text);
   font-size: 0.88rem;
   font-weight: 700;
 }
 
 .schedule-item span {
   display: block;
-  color: #78350f;
+  color: var(--gold-dark);
   font-size: 0.82rem;
 }
 
@@ -183,7 +183,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #78350f;
+  color: var(--gold-dark);
 }
 
 .footer-social-icons {
@@ -199,9 +199,9 @@
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
-  color: #78350f;
-  background: #ffffff;
-  border: 1px solid #fde68a;
+  color: var(--gold-dark);
+  background: var(--white);
+  border: 1px solid var(--border);
   transition: all 0.25s ease;
 }
 
@@ -214,8 +214,8 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #fde68a;
-  background: #ffffff;
+  border-top: 1px solid var(--border);
+  background: var(--white);
   padding: 1.2rem 1.5rem;
 }
 
@@ -228,7 +228,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
-  color: #78350f;
+  color: var(--gold-dark);
 }
 
 .footer-bottom p {
@@ -260,7 +260,7 @@
 }
 
 .admin-link {
-  color: #78350f;
+  color: var(--gold-dark);
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 600;
