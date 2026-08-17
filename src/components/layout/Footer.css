@@ -91,7 +91,7 @@
 }
 
 .footer-nav-link {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -125,11 +125,11 @@
   align-items: flex-start;
   gap: 0.65rem;
   line-height: 1.5;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .footer-contact-list a {
-  color: #ffffff;
+  color: var(--text);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -206,7 +206,7 @@
 }
 
 .footer-social-link:hover {
-  color: #ffffff;
+  color: var(--text);
   background: var(--gold);
   border-color: var(--gold);
   transform: translateY(-2px);

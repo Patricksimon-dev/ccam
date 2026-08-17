@@ -1,36 +1,40 @@
 :root {
   /* Main Theme Colors */
-  --primary: #6b21a8;
-  --primary-dark: #3b0764;
+  --primary: #6d28d9;
+  --primary-dark: #4c1d95;
   --primary-light: #f3e8ff;
-  
-  --gold: #f59e0b;
-  --gold-dark: #b45309;
-  --gold-light: #fef9c3;
-  --gold-glow: rgba(245, 158, 11, 0.35);
 
-  /* Subordinate Colors: Royal Purple & Crisp White */
-  --purple: #6b21a8;
-  --purple-dark: #3b0764;
-  --purple-light: #f3e8ff;
+  --gold: #b45309;
+  --gold-deep: #7c3d00;
+  --gold-soft: #fef3c7;
+  --gold-warm: #f6c453;
+  --gold-glow: rgba(180, 83, 9, 0.22);
+
+  /* Secondary Palette */
+  --purple: #6d28d9;
+  --purple-dark: #4c1d95;
+  --purple-soft: #ede9fe;
   --white: #ffffff;
+  --white-soft: #fffdf8;
 
   /* Typography */
-  --text: #000000;
-  --text-h: #f59e0b;
-  --text-muted: #fef9c3;
+  --text: #111111;
+  --text-soft: #2c2c2c;
+  --text-h: #7c3d00;
+  --text-muted: #5a3a18;
 
-  /* Main Website Background: Radiant Gold Warm Gradient */
-  --bg: linear-gradient(135deg, #fffbeb 0%, #fde047 35%, #f59e0b 75%, #d97706 100%);
-  --bg-alt: #fef08a;
-  --bg-card: #ffffff;
-  --border: #facc15;
-  --border-gold: rgba(245, 158, 11, 0.45);
+  /* Main Backgrounds */
+  --bg: linear-gradient(135deg, #fffaf0 0%, #fef3c7 20%, #f6d365 45%, #b45309 100%);
+  --bg-alt: #f7e7b5;
+  --bg-card: #fffdf8;
+  --surface: rgba(255, 255, 255, 0.88);
+  --border: rgba(124, 61, 0, 0.2);
+  --border-gold: rgba(180, 83, 9, 0.35);
 
   /* Shadows */
-  --shadow-sm: 0 2px 10px rgba(91, 33, 182, 0.08);
-  --shadow: 0 12px 30px -4px rgba(91, 33, 182, 0.15), 0 4px 12px -2px rgba(245, 158, 11, 0.1);
-  --shadow-lg: 0 20px 45px -10px rgba(59, 7, 100, 0.25);
+  --shadow-sm: 0 2px 10px rgba(124, 61, 0, 0.08);
+  --shadow: 0 14px 32px rgba(124, 61, 0, 0.14), 0 4px 12px rgba(180, 83, 9, 0.08);
+  --shadow-lg: 0 20px 45px rgba(76, 29, 149, 0.18), 0 10px 24px rgba(180, 83, 9, 0.12);
 
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 16px;
@@ -52,7 +56,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #fffbeb 0%, #fde047 35%, #f59e0b 75%, #d97706 100%);
+  background: var(--bg);
   background-attachment: fixed;
   color: var(--text);
 }
@@ -67,115 +71,69 @@ body {
   background: transparent;
 }
 
-.welcome-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  background: rgba(18, 4, 34, 0.75);
-  backdrop-filter: blur(8px);
-}
-
-.welcome-modal {
-  position: relative;
-  max-width: 660px;
-  width: 100%;
-  padding: 3rem 2.2rem 2.5rem;
-  border-radius: 24px;
-  text-align: center;
-  background: #ffffff;
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(245, 158, 11, 0.3);
-  border: 3px solid var(--gold);
-}
-
-.welcome-logo-badge {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.25rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #ffffff;
-  border: 4px solid var(--gold);
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
-  overflow: hidden;
-}
-
-.welcome-logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.welcome-modal h1 {
-  margin: 0 0 0.8rem;
-  color: var(--text-h);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  line-height: 1.15;
-  font-weight: 800;
-}
-
-.welcome-modal p {
-  max-width: 540px;
-  margin: 0 auto 1.8rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--text);
-}
-
-.welcome-enter-btn {
-  border: none;
-  border-radius: 12px;
-  padding: 0.9rem 2.5rem;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #ffffff;
-  background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(107, 33, 168, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.welcome-enter-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(107, 33, 168, 0.5);
-}
-
-.welcome-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fef9c3;
-  color: #78350f;
-  border: 1px solid var(--border);
-  font-size: 1.4rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.welcome-close:hover {
-  background: #fde68a;
-  color: var(--text-h);
-}
-
 h1, h2, h3, h4 {
   color: var(--text-h);
   font-weight: 700;
 }
 
-a {
-  color: var(--primary-dark);
+p, li, span, div, label, input, textarea, button {
+  color: var(--text);
+}
+
+button {
+  font-family: inherit;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text);
+  border: 1px solid rgba(124, 61, 0, 0.2);
+}
+
+.form-input::placeholder {
+  color: #736a5f;
+  opacity: 0.8;
+}
+
+.contact-card,
+.glass-card,
+.content-card,
+.bank-card-wrapper,
+.impact-item,
+.tab-btn,
+.announcement-search-input,
+.card-detail-item,
+.donation-info-card,
+.leadership-callout,
+.scripture-callout-card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-overlay {
+  background: rgba(124, 61, 0, 0.18);
+}
+
+.media-btn:hover {
+  background: var(--gold-deep);
+  color: var(--white);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  color: #111111;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 100%);
+  color: #111111;
+}
+
+.submit-btn {
+  color: #111111;
+}
+
+.submit-btn:hover:not(:disabled) {
+  color: #111111;
 }
 
 .site-layout {
@@ -222,7 +180,7 @@ a {
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   text-align: left;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .bank-transfer-card {
@@ -335,7 +293,7 @@ a {
 
 .media-btn:hover {
   background: var(--gold-dark);
-  color: #ffffff;
+  color: var(--text);
 }
 
 .activity-card {
@@ -404,24 +362,24 @@ a {
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--primary-dark);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  color: #111111;
 }
 
 .btn-primary:hover {
-  background: var(--gold-dark);
-  color: white;
+  background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 100%);
+  color: #111111;
 }
 
 .btn-outline {
   background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  border: 2px solid rgba(107, 33, 168, 0.6);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--text);
 }
 
 .btn-full {
@@ -451,10 +409,10 @@ a {
 }
 
 .glass-card {
-  background: linear-gradient(180deg, rgba(28, 28, 30, 0.96), rgba(18, 18, 18, 0.96));
-  border: 1px solid rgba(212, 175, 55, 0.24);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.1), rgba(107, 33, 168, 0.08));
+  border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 18px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(245, 158, 11, 0.15);
 }
 
 .section-title {
@@ -475,11 +433,11 @@ a {
 
 .contact-card {
   padding: 2.2rem 2rem;
-  background: linear-gradient(135deg, #1b0730 0%, #2e1065 60%, #120422 100%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(107, 33, 168, 0.1) 60%, rgba(255, 255, 255, 0.05) 100%);
   border: 3px solid var(--gold);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(245, 158, 11, 0.3);
-  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(245, 158, 11, 0.2), 0 0 35px rgba(245, 158, 11, 0.15);
+  color: var(--text);
 }
 
 .contact-card .section-eyebrow {
@@ -487,7 +445,7 @@ a {
 }
 
 .contact-card .section-title {
-  color: #ffffff;
+  color: var(--text);
   font-size: 2rem;
   margin: 0.2rem 0 0.8rem;
 }
@@ -528,7 +486,7 @@ a {
 }
 
 .highlight-title {
-  color: #ffffff;
+  color: var(--text);
   font-weight: 700;
   display: block;
   margin-bottom: 0.2rem;
@@ -552,11 +510,11 @@ a {
   gap: 0.45rem;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .form-field span {
-  color: #ffffff;
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -577,13 +535,13 @@ a {
   border-radius: 12px;
   font-size: 0.95rem;
   font-family: inherit;
-  color: #ffffff;
-  background: rgba(18, 4, 34, 0.8);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.95);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .form-input::placeholder {
-  color: #d8b4fe;
+  color: #888888;
   opacity: 0.75;
 }
 
@@ -740,8 +698,8 @@ textarea.form-input {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(212, 161, 27, 0.3);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 12px;
   padding: 0.85rem 1.25rem;
 }
@@ -750,7 +708,7 @@ textarea.form-input {
   font-family: 'Courier New', Courier, monospace;
   font-size: clamp(1.4rem, 4vw, 2.1rem);
   font-weight: 800;
-  color: #fff7d8;
+  color: var(--text);
   letter-spacing: 0.12em;
 }
 
@@ -777,7 +735,7 @@ textarea.form-input {
 
 .copy-btn.copied {
   background: #16a34a;
-  color: white;
+  color: var(--text);
 }
 
 .card-details-grid {
@@ -787,8 +745,8 @@ textarea.form-input {
 }
 
 .card-detail-item {
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.25);
   border-radius: 10px;
   padding: 0.9rem 1rem;
 }
@@ -843,7 +801,7 @@ textarea.form-input {
 .donation-info-card h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: #fff3c4;
+  color: var(--text-h);
 }
 
 .donation-info-card p {
@@ -860,7 +818,7 @@ textarea.form-input {
 .impact-title {
   margin: 0 0 1.8rem;
   font-size: 1.4rem;
-  color: #fff3c4;
+  color: var(--text-h);
 }
 
 .impact-grid {
@@ -871,8 +829,8 @@ textarea.form-input {
 
 .impact-item {
   padding: 1.25rem 1rem;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(212, 161, 27, 0.2);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
   border-radius: 14px;
   display: flex;
   flex-direction: column;
@@ -888,14 +846,14 @@ textarea.form-input {
 .impact-item h4 {
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
-  color: #fff3c4;
+  color: var(--text-h);
 }
 
 .impact-item p {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: #ffffff;
+  color: var(--text);
 }
 
 /* ==========================================================================
@@ -934,9 +892,9 @@ textarea.form-input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.6rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--gold-light);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--text);
   font-size: 0.92rem;
 }
 
@@ -957,8 +915,8 @@ textarea.form-input {
   gap: 0.4rem;
   padding: 0.6rem 1.1rem;
   border-radius: 10px;
-  border: 1px solid rgba(212, 161, 27, 0.25);
-  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.08);
   color: var(--text);
   font-size: 0.88rem;
   font-weight: 600;
@@ -1036,7 +994,7 @@ textarea.form-input {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.7;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .empty-state-card {
