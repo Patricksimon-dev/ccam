@@ -66,7 +66,6 @@ export default function AdminLogin() {
           <input
             type="text"
             className="form-input"
-            placeholder="e.g. idokoekeleadmin.ccam.com"
             autoComplete="username"
             disabled={loading}
             {...register('email', { required: true })}
@@ -80,7 +79,6 @@ export default function AdminLogin() {
           <input
             type="password"
             className="form-input"
-            placeholder="••••••••"
             autoComplete="current-password"
             disabled={loading}
             {...register('password', { required: true })}
