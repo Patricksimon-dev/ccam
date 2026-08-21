@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, useWatch } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { FaPlus, FaEdit, FaTrash, FaTimes, FaCheck } from 'react-icons/fa'
 import { useContent } from '../../context/ContentContext'
-import { api, notifySocialResults } from '../../api/client'
+import { api, assetUrl, notifySocialResults } from '../../api/client'
 import './ContentManager.css'
 
 function buildSocialMeta(formData, socialShare) {
@@ -56,8 +56,9 @@ export default function ContentManager({
       : {}
   )
 
-  const { register, handleSubmit, reset, setValue, watch } = useForm({ defaultValues })
+  const { register, handleSubmit, reset, setValue, watch, control } = useForm({ defaultValues })
   const shareToSocial = watch('shareToSocial')
+  const watchedValues = useWatch({ control })
 
   const openCreate = () => {
     reset(defaultValues)
@@ -92,7 +93,7 @@ export default function ContentManager({
           'Content-Type': 'multipart/form-data',
         },
       })
-      setValue(fieldName, res.data.url)
+      setValue(fieldName, res.data.url, { shouldDirty: true })
       toast.update(loadingToast, {
         render: 'Upload complete!',
         type: 'success',
@@ -222,6 +223,13 @@ export default function ContentManager({
                             cursor: 'pointer'
                           }}
                         />
+                        {watchedValues[field.name] && (field.name.toLowerCase().includes('image') || field.name.toLowerCase().includes('photo')) ? (
+                          <img
+                            src={assetUrl(watchedValues[field.name])}
+                            alt="Selected preview"
+                            style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%' }}
+                          />
+                        ) : null}
                       </div>
                     )}
                   </div>

@@ -13,6 +13,9 @@ import Leadership from './pages/Leadership'
 import Contact from './pages/Contact'
 import Donation from './pages/Donation'
 import Announcements from './pages/Announcements'
+import Sermons from './pages/Sermons'
+import Activities from './pages/Activities'
+import Events from './pages/Events'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import ManageAnnouncements from './pages/admin/ManageAnnouncements'
@@ -73,6 +76,9 @@ export default function App() {
               <Route path="contact" element={<Contact />} />
               <Route path="donation" element={<Donation />} />
               <Route path="announcements" element={<Announcements />} />
+              <Route path="sermons" element={<Sermons />} />
+              <Route path="activities" element={<Activities />} />
+              <Route path="events" element={<Events />} />
             </Route>
 
             <Route path="admin/login" element={<AdminLogin />} />

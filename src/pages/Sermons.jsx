@@ -1,5 +1,6 @@
 import { format, parseISO } from 'date-fns'
 import { useContent } from '../context/ContentContext'
+import { assetUrl } from '../api/client'
 import { FaPlay, FaHeadphones } from 'react-icons/fa'
 import PageHeader from '../components/PageHeader'
 
@@ -28,12 +29,12 @@ export default function Sermons() {
               <p>{sermon.summary}</p>
               <div className="media-links">
                 {sermon.videoUrl && (
-                  <a href={sermon.videoUrl} target="_blank" rel="noopener noreferrer" className="media-btn">
+                  <a href={assetUrl(sermon.videoUrl)} target="_blank" rel="noopener noreferrer" className="media-btn">
                     <FaPlay /> Watch Video
                   </a>
                 )}
                 {sermon.audioUrl && (
-                  <a href={sermon.audioUrl} target="_blank" rel="noopener noreferrer" className="media-btn">
+                  <a href={assetUrl(sermon.audioUrl)} target="_blank" rel="noopener noreferrer" className="media-btn">
                     <FaHeadphones /> Listen
                   </a>
                 )}

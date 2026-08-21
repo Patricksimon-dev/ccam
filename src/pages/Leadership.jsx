@@ -1,4 +1,5 @@
 import { useContent } from '../context/ContentContext'
+import { assetUrl } from '../api/client'
 import { FaUser, FaQuoteLeft, FaCrown, FaUsers } from 'react-icons/fa'
 import PageHeader from '../components/PageHeader'
 import './Leadership.css'
@@ -26,7 +27,7 @@ export default function Leadership() {
             <article key={leader.id} className="leader-card glass-card">
               <div className="leader-photo-wrap">
                 {leader.imageUrl ? (
-                  <img src={leader.imageUrl} alt={leader.name} className="leader-img" />
+                  <img src={assetUrl(leader.imageUrl)} alt={leader.name} className="leader-img" />
                 ) : (
                   <div className="leader-placeholder-circle">
                     <FaUser />

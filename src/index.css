@@ -320,6 +320,15 @@ button {
   align-items: flex-start;
 }
 
+.event-image {
+  width: 140px;
+  height: 100px;
+  flex: 0 0 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
 .event-date-badge {
   background: var(--gold-light);
   border: 2px solid var(--gold);
