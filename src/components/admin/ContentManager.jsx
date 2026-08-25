@@ -81,17 +81,47 @@ export default function ContentManager({
     reset(defaultValues)
   }
 
+  const prepareUpload = (file) => {
+    if (!file.type.startsWith('image/') || file.size <= 2 * 1024 * 1024) {
+      return Promise.resolve(file)
+    }
+
+    return new Promise((resolve, reject) => {
+      const image = new Image()
+      const objectUrl = URL.createObjectURL(file)
+      image.onload = () => {
+        const scale = Math.min(1, 1600 / Math.max(image.width, image.height))
+        const canvas = document.createElement('canvas')
+        canvas.width = Math.round(image.width * scale)
+        canvas.height = Math.round(image.height * scale)
+        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height)
+        canvas.toBlob((blob) => {
+          URL.revokeObjectURL(objectUrl)
+          if (!blob) return reject(new Error('Could not prepare image'))
+          resolve(new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), { type: 'image/jpeg' }))
+        }, 'image/jpeg', 0.8)
+      }
+      image.onerror = () => {
+        URL.revokeObjectURL(objectUrl)
+        reject(new Error('Could not read image'))
+      }
+      image.src = objectUrl
+    })
+  }
+
   const handleFileUpload = async (e, fieldName) => {
     const file = e.target.files[0]
     if (!file) return
 
     setLocalPreviews((prev) => ({ ...prev, [fieldName]: URL.createObjectURL(file) }))
 
-    const formData = new FormData()
-    formData.append('file', file)
-
     const loadingToast = toast.loading(`Uploading ${file.name}...`)
     try {
+      const preparedFile = await prepareUpload(file)
+      const formData = new FormData()
+      formData.append('file', preparedFile)
+      const previousValue = watchedValues[fieldName]
+      if (previousValue) formData.append('previousUrl', previousValue)
       const res = await api.post('/admin/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -107,7 +137,7 @@ export default function ContentManager({
       })
     } catch (err) {
       toast.update(loadingToast, {
-        render: err.response?.data?.error || 'Upload failed',
+        render: err.response?.data?.error || err.message || 'Upload failed',
         type: 'error',
         isLoading: false,
         autoClose: 3000,
