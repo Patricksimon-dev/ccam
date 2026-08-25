@@ -11,10 +11,18 @@ export function AuthProvider({ children }) {
   const [authLoading, setAuthLoading] = useState(true)
 
   useEffect(() => {
+    const handleAuthExpired = () => {
+      setAuthToken(null)
+      setIsAuthenticated(false)
+      setAdmin(null)
+      setAuthLoading(false)
+    }
+
+    window.addEventListener('church-auth-expired', handleAuthExpired)
     const token = getAuthToken()
     if (!token) {
       setAuthLoading(false)
-      return
+      return () => window.removeEventListener('church-auth-expired', handleAuthExpired)
     }
     api
       .get('/auth/me')
@@ -28,6 +36,7 @@ export function AuthProvider({ children }) {
         sessionStorage.removeItem(AUTH_KEY)
       })
       .finally(() => setAuthLoading(false))
+    return () => window.removeEventListener('church-auth-expired', handleAuthExpired)
   }, [])
 
   const login = useCallback(async (email, password) => {

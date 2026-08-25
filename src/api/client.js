@@ -23,6 +23,18 @@ api.interceptors.request.use((config) => {
   return config
 })
 
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      sessionStorage.removeItem(TOKEN_KEY)
+      sessionStorage.removeItem('church_admin_auth')
+      window.dispatchEvent(new Event('church-auth-expired'))
+    }
+    return Promise.reject(error)
+  }
+)
+
 export function setAuthToken(token) {
   if (token) sessionStorage.setItem(TOKEN_KEY, token)
   else sessionStorage.removeItem(TOKEN_KEY)
