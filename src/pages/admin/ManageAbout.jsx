@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { toast } from 'react-toastify'
-import { FaSave } from 'react-icons/fa'
+import { FaSave, FaTrash } from 'react-icons/fa'
 import { useForm } from 'react-hook-form'
 import { useContent } from '../../context/ContentContext'
 
@@ -14,7 +14,7 @@ const fields = [
 ]
 
 export default function ManageAbout() {
-  const { data, updateAbout } = useContent()
+  const { data, updateAbout, deleteAbout } = useContent()
   const { register, handleSubmit, reset } = useForm({ defaultValues: data.about })
 
   useEffect(() => {
@@ -27,6 +27,16 @@ export default function ManageAbout() {
       toast.success('About page updated')
     } catch (err) {
       toast.error(err.response?.data?.error || 'Update failed')
+    }
+  }
+
+  const handleDelete = async () => {
+    if (!window.confirm('Are you sure you want to clear the About page?')) return
+    try {
+      await deleteAbout()
+      toast.success('About page cleared')
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Delete failed')
     }
   }
 
@@ -54,6 +64,9 @@ export default function ManageAbout() {
         <div className="form-actions">
           <button type="submit" className="btn btn-primary">
             <FaSave /> Save Changes
+          </button>
+          <button type="button" className="btn btn-danger" onClick={handleDelete}>
+            <FaTrash /> Clear Content
           </button>
         </div>
       </form>

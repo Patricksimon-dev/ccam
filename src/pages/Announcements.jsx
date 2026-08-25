@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { format, parseISO } from 'date-fns'
 import { useContent } from '../context/ContentContext'
-import { FaThumbtack, FaCalendarAlt, FaSearch, FaBullhorn, FaFilter } from 'react-icons/fa'
+import { FaThumbtack, FaCalendarAlt, FaSearch, FaBullhorn } from 'react-icons/fa'
 import PageHeader from '../components/PageHeader'
 
 export default function Announcements() {

@@ -19,11 +19,8 @@ export default function About() {
           <FaChurch />
         </div>
         <span className="section-eyebrow">Welcome to CCAM</span>
-        <h2>{welcomeTitle || 'Welcome to Christ Chosen Assembly Ministry'}</h2>
-        <p className="about-lead">
-          {welcomeText ||
-            'We are a vibrant, spirit-filled community committed to spreading God’s love, building strong disciples, and serving our local community with faith and purpose.'}
-        </p>
+        <h2>{welcomeTitle}</h2>
+        <p className="about-lead">{welcomeText}</p>
       </section>
 
       <div className="about-grid">
@@ -32,7 +29,7 @@ export default function About() {
             <FaBullseye className="about-icon" />
           </div>
           <h3>Our Mission</h3>
-          <p>{mission || 'To preach the uncompromised Gospel of Jesus Christ, making disciples and empowering believers to live victorious lives.'}</p>
+          <p>{mission}</p>
         </article>
 
         <article className="about-card glass-card">
@@ -40,7 +37,7 @@ export default function About() {
             <FaEye className="about-icon" />
           </div>
           <h3>Our Vision</h3>
-          <p>{vision || 'To see lives transformed, families restored, and communities impacted through the power of the Holy Spirit.'}</p>
+          <p>{vision}</p>
         </article>
 
         <article className="about-card glass-card">
@@ -48,7 +45,7 @@ export default function About() {
             <FaHistory className="about-icon" />
           </div>
           <h3>Our History</h3>
-          <p>{history || 'Founded with a divine calling to serve God’s people, Christ Chosen Assembly Ministry has grown into a beacon of hope and faith.'}</p>
+          <p>{history}</p>
         </article>
 
         <article className="about-card glass-card">
@@ -56,7 +53,7 @@ export default function About() {
             <FaHeart className="about-icon" />
           </div>
           <h3>Core Values</h3>
-          <p>{values || 'Faith in God, Unconditional Love, Biblical Integrity, Community Fellowship, and Dedicated Prayer.'}</p>
+          <p>{values}</p>
         </article>
       </div>
 

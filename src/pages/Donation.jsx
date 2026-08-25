@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaHandHoldingHeart, FaCross, FaGift, FaCopy, FaCheck, FaBuilding, FaUserCheck, FaCreditCard, FaHeart, FaUsers, FaChurch } from 'react-icons/fa'
+import { FaCross, FaGift, FaCopy, FaCheck, FaBuilding, FaUserCheck, FaCreditCard, FaHeart, FaUsers, FaChurch } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import PageHeader from '../components/PageHeader'
 

@@ -76,6 +76,14 @@ export function ContentProvider({ children }) {
     return about
   }, [])
 
+  const deleteAbout = useCallback(async () => {
+    await api.delete('/admin/about')
+    setData((prev) => ({
+      ...prev,
+      about: { ...emptyData.about },
+    }))
+  }, [])
+
   return (
     <ContentContext.Provider
       value={{
@@ -87,6 +95,7 @@ export function ContentProvider({ children }) {
         updateItem,
         deleteItem,
         updateAbout,
+        deleteAbout,
         collections: COLLECTIONS,
       }}
     >

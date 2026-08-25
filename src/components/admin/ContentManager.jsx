@@ -56,9 +56,9 @@ export default function ContentManager({
       : {}
   )
 
-  const { register, handleSubmit, reset, setValue, watch, control } = useForm({ defaultValues })
-  const shareToSocial = watch('shareToSocial')
+  const { register, handleSubmit, reset, setValue, control } = useForm({ defaultValues })
   const watchedValues = useWatch({ control })
+  const shareToSocial = watchedValues.shareToSocial
 
   const openCreate = () => {
     reset(defaultValues)
