@@ -1,4 +1,5 @@
 import ContentManager from '../../components/admin/ContentManager'
+import { assetUrl } from '../../api/client'
 
 const fields = [
   { name: 'name', label: 'Full Name', required: true },
@@ -15,6 +16,13 @@ export default function ManageLeadership() {
       fields={fields}
       renderItem={(item) => (
         <>
+          {item.imageUrl && (
+            <img
+              src={assetUrl(item.imageUrl)}
+              alt=""
+              style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%', marginRight: '0.75rem' }}
+            />
+          )}
           <h3>{item.name}</h3>
           <p className="admin-row-meta">
             {item.role} &middot; {item.bio.slice(0, 80)}...

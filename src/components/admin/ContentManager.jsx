@@ -35,6 +35,7 @@ export default function ContentManager({
   const [editing, setEditing] = useState(null)
   const [showForm, setShowForm] = useState(false)
   const [saving, setSaving] = useState(false)
+  const [localPreviews, setLocalPreviews] = useState({})
 
   const defaultValues = fields.reduce(
     (acc, f) => {
@@ -76,12 +77,15 @@ export default function ContentManager({
   const closeForm = () => {
     setShowForm(false)
     setEditing(null)
+    setLocalPreviews({})
     reset(defaultValues)
   }
 
   const handleFileUpload = async (e, fieldName) => {
     const file = e.target.files[0]
     if (!file) return
+
+    setLocalPreviews((prev) => ({ ...prev, [fieldName]: URL.createObjectURL(file) }))
 
     const formData = new FormData()
     formData.append('file', file)
@@ -94,6 +98,7 @@ export default function ContentManager({
         },
       })
       setValue(fieldName, res.data.url, { shouldDirty: true })
+      setLocalPreviews((prev) => ({ ...prev, [fieldName]: res.data.url }))
       toast.update(loadingToast, {
         render: 'Upload complete!',
         type: 'success',
@@ -223,9 +228,9 @@ export default function ContentManager({
                             cursor: 'pointer'
                           }}
                         />
-                        {watchedValues[field.name] && (field.name.toLowerCase().includes('image') || field.name.toLowerCase().includes('photo')) ? (
+                        {(localPreviews[field.name] || watchedValues[field.name]) && (field.name.toLowerCase().includes('image') || field.name.toLowerCase().includes('photo')) ? (
                           <img
-                            src={assetUrl(watchedValues[field.name])}
+                            src={assetUrl(localPreviews[field.name] || watchedValues[field.name])}
                             alt="Selected preview"
                             style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%' }}
                           />
