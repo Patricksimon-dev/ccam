@@ -3,7 +3,7 @@ import axios from 'axios'
 const TOKEN_KEY = 'church_token'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '/api' : 'https://christchosen.onrender.com/api'),
+  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? '/api' : 'https://cc-cosp.onrender.com/api'),
   headers: { 'Content-Type': 'application/json' },
 })
 
