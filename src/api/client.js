@@ -8,11 +8,28 @@ export const api = axios.create({
 })
 
 export function assetUrl(value) {
-  if (!value || /^(data:|blob:|https?:\/\/)/i.test(value)) return value
-  const apiBase = api.defaults.baseURL.startsWith('/')
-    ? window.location.origin + api.defaults.baseURL
-    : api.defaults.baseURL
-  return new URL(value, apiBase).toString()
+  if (!value) return ''
+  if (/^(data:|blob:)/i.test(value)) return value
+
+  let cleanPath = value
+  const uploadsIdx = value.indexOf('/api/uploads/')
+  if (uploadsIdx !== -1) {
+    cleanPath = value.substring(uploadsIdx)
+  }
+
+  if (/^https?:\/\//i.test(cleanPath)) return cleanPath
+
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath
+  }
+
+  const apiBase = api.defaults.baseURL || '/api'
+  if (/^https?:\/\//i.test(apiBase)) {
+    const origin = new URL(apiBase).origin
+    return `${origin}${cleanPath}`
+  }
+
+  return cleanPath
 }
 
 api.interceptors.request.use((config) => {

@@ -27,12 +27,26 @@ export default function Leadership() {
             <article key={leader.id} className="leader-card glass-card">
               <div className="leader-photo-wrap">
                 {leader.imageUrl ? (
-                  <img src={assetUrl(leader.imageUrl)} alt={leader.name} className="leader-img" />
-                ) : (
-                  <div className="leader-placeholder-circle">
-                    <FaUser />
-                  </div>
-                )}
+                  <img
+                    src={assetUrl(leader.imageUrl)}
+                    alt={leader.name}
+                    className="leader-img"
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                      const parent = e.target.parentElement
+                      if (parent) {
+                        const fallback = parent.querySelector('.leader-placeholder-circle')
+                        if (fallback) fallback.style.display = 'flex'
+                      }
+                    }}
+                  />
+                ) : null}
+                <div
+                  className="leader-placeholder-circle"
+                  style={{ display: leader.imageUrl ? 'none' : 'flex' }}
+                >
+                  <FaUser />
+                </div>
                 <div className="leader-crown-badge">
                   <FaCrown />
                 </div>

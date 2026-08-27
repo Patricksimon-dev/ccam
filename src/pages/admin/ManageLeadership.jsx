@@ -1,3 +1,4 @@
+import { FaUser } from 'react-icons/fa'
 import ContentManager from '../../components/admin/ContentManager'
 import { assetUrl } from '../../api/client'
 
@@ -15,19 +16,40 @@ export default function ManageLeadership() {
       title="Leadership"
       fields={fields}
       renderItem={(item) => (
-        <>
-          {item.imageUrl && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          {item.imageUrl ? (
             <img
               src={assetUrl(item.imageUrl)}
               alt=""
-              style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%', marginRight: '0.75rem' }}
+              style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%', flexShrink: 0 }}
+              onError={(e) => {
+                e.target.style.display = 'none'
+              }}
             />
+          ) : (
+            <div
+              style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                background: 'rgba(212, 161, 27, 0.15)',
+                color: 'var(--gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+              }}
+            >
+              <FaUser />
+            </div>
           )}
-          <h3>{item.name}</h3>
-          <p className="admin-row-meta">
-            {item.role} &middot; {item.bio.slice(0, 80)}...
-          </p>
-        </>
+          <div>
+            <h3>{item.name}</h3>
+            <p className="admin-row-meta">
+              {item.role} &middot; {(item.bio || '').slice(0, 80)}...
+            </p>
+          </div>
+        </div>
       )}
     />
   )
