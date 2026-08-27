@@ -5,7 +5,7 @@ const fields = [
   { name: 'name', label: 'Full Name', required: true },
   { name: 'role', label: 'Role / Title', required: true, placeholder: 'Senior Pastor' },
   { name: 'bio', label: 'Biography', type: 'textarea', required: true },
-  { name: 'imageUrl', label: 'Photo URL (optional)', placeholder: 'https://...' },
+  { name: 'imageUrl', label: 'Leader Photo / Image (upload or URL)', placeholder: 'Upload photo below or paste https://...' },
 ]
 
 export default function ManageLeadership() {
