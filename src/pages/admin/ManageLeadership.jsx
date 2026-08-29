@@ -17,32 +17,15 @@ export default function ManageLeadership() {
       fields={fields}
       renderItem={(item) => (
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          {item.imageUrl ? (
-            <img
-              src={assetUrl(item.imageUrl)}
-              alt=""
-              style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '50%', flexShrink: 0 }}
-              onError={(e) => {
-                e.target.style.display = 'none'
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '50%',
-                background: 'rgba(212, 161, 27, 0.15)',
-                color: 'var(--gold)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-              }}
-            >
-              <FaUser />
-            </div>
-          )}
+          <img
+            src={assetUrl(item.imageUrl) || '/go-pastor.jpg'}
+            alt=""
+            style={{ width: '48px', height: '48px', objectFit: 'cover', objectPosition: 'center 15%', borderRadius: '50%', flexShrink: 0 }}
+            onError={(e) => {
+              e.target.onerror = null
+              e.target.src = '/go-pastor.jpg'
+            }}
+          />
           <div>
             <h3>{item.name}</h3>
             <p className="admin-row-meta">

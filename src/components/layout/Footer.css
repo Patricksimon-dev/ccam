@@ -1,10 +1,11 @@
 .site-footer {
-  background: var(--gold-light);
-  border-top: 3px solid var(--gold);
-  color: var(--text);
+  background: linear-gradient(135deg, #2e1065 0%, #3b0764 60%, #1e0a45 100%);
+  border-top: 4px solid #f59e0b;
+  color: #f1f5f9;
   margin-top: 4rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 -10px 30px rgba(46, 16, 101, 0.3);
 }
 
 .site-footer::before {
@@ -14,7 +15,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  background: linear-gradient(90deg, transparent, #fde047, transparent);
 }
 
 .footer-inner {
@@ -40,11 +41,11 @@
 .footer-logo {
   width: 80px;
   height: auto;
-  filter: drop-shadow(0 4px 10px rgba(217, 119, 6, 0.2));
+  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.35));
 }
 
 .footer-title {
-  color: var(--text);
+  color: #ffffff;
   margin: 0 0 0.6rem;
   font-size: 1.15rem;
   font-weight: 800;
@@ -52,19 +53,20 @@
 }
 
 .footer-tagline {
-  color: var(--gold-dark);
+  color: #fde047;
   font-size: 0.88rem;
   line-height: 1.6;
   margin: 0;
   max-width: 280px;
+  font-weight: 600;
 }
 
 .footer-heading {
-  color: var(--gold-dark);
+  color: #fde047;
   margin: 0 0 1.25rem;
   font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 0.4rem;
@@ -75,9 +77,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 32px;
+  width: 36px;
   height: 3px;
-  background: var(--gold);
+  background: #f59e0b;
   border-radius: 2px;
 }
 
@@ -91,7 +93,7 @@
 }
 
 .footer-nav-link {
-  color: var(--text);
+  color: #e2e8f0;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -103,12 +105,12 @@
 
 .nav-arrow {
   font-size: 0.65rem;
-  color: var(--gold);
+  color: #f59e0b;
   transition: transform 0.2s ease;
 }
 
 .footer-nav-link:hover {
-  color: var(--gold);
+  color: #fde047;
   transform: translateX(4px);
 }
 
@@ -125,22 +127,23 @@
   align-items: flex-start;
   gap: 0.65rem;
   line-height: 1.5;
-  color: var(--text);
+  color: #e2e8f0;
 }
 
 .footer-contact-list a {
-  color: var(--text);
+  color: #fef08a;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-contact-list a:hover {
-  color: var(--gold);
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .footer-icon {
-  color: var(--gold);
+  color: #f59e0b;
   font-size: 1.05rem;
   flex-shrink: 0;
   margin-top: 0.2rem;
@@ -161,14 +164,14 @@
 
 .schedule-item strong {
   display: block;
-  color: var(--text);
+  color: #ffffff;
   font-size: 0.88rem;
   font-weight: 700;
 }
 
 .schedule-item span {
   display: block;
-  color: var(--gold-dark);
+  color: #fde047;
   font-size: 0.82rem;
 }
 
@@ -183,7 +186,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold-dark);
+  color: #fde047;
 }
 
 .footer-social-icons {
@@ -199,23 +202,23 @@
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
-  color: var(--gold-dark);
-  background: var(--white);
-  border: 1px solid var(--border);
+  color: #fef08a;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
   transition: all 0.25s ease;
 }
 
 .footer-social-link:hover {
-  color: var(--text);
-  background: var(--gold);
-  border-color: var(--gold);
+  color: #1e1b4b;
+  background: #f59e0b;
+  border-color: #f59e0b;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  background: var(--white);
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  background: #1e0a45;
   padding: 1.2rem 1.5rem;
 }
 
@@ -228,7 +231,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
-  color: var(--gold-dark);
+  color: #cbd5e1;
 }
 
 .footer-bottom p {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { format, parseISO } from 'date-fns';
 import { useContent } from '../context/ContentContext';
-import { FaBullhorn, FaBook, FaCalendarWeek, FaCalendarAlt } from 'react-icons/fa';
+import { FaBullhorn, FaBook, FaCalendarWeek, FaCalendarAlt, FaChurch, FaHeart, FaHandsHelping, FaStar } from 'react-icons/fa';
 import './Home.css';
 import ContactForm from '../components/ContactForm';
 import Map from '../components/Map';
@@ -22,7 +22,7 @@ export default function Home() {
             <h1>CHRIST CHOSEN</h1>
             <h2>ASSEMBLY MINISTRY</h2>
             <img src="/logo1.png" alt="Christ Chosen Assembly Ministry logo" className="hero-logo" />
-            <p className="hero-verse">surely juses is alive Rev 1 vs 8</p>
+            <p className="hero-verse">Surely Jesus is Alive — Rev 1:8</p>
           </div>
           <p className="hero-subtitle">
             A place of worship, fellowship, and spiritual growth for all.
@@ -34,10 +34,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="welcome-alert-banner">
+        <div className="welcome-alert-header">
+          <div className="welcome-alert-badge">
+            <FaChurch className="welcome-icon-glow" />
+            <span>Welcome Alert</span>
+          </div>
+        </div>
+        <div className="welcome-alert-body">
+          <h2 className="welcome-alert-title">Welcome to Christ Chosen Assembly Ministry!</h2>
+          <p className="welcome-alert-text">
+            We are overjoyed to welcome you to our faith family. Whether you are seeking a spiritual home, looking for prayer, or exploring faith, you are warmly invited to worship, grow, and serve with us.
+          </p>
+          <div className="welcome-highlights-row">
+            <span className="welcome-pill"><FaHeart /> Spirit-Filled Worship</span>
+            <span className="welcome-pill"><FaStar /> Uncompromising Word</span>
+            <span className="welcome-pill"><FaHandsHelping /> Loving Fellowship</span>
+          </div>
+          <div className="welcome-alert-actions">
+            <Link to="/about" className="welcome-btn-primary">Discover Our Heart</Link>
+            <Link to="/leadership" className="welcome-btn-outline">Meet General Overseer &amp; Leadership</Link>
+          </div>
+        </div>
+      </section>
+
       {pinnedAnnouncement && (
-        <section className="section pinned-banner">
-          <FaBullhorn className="section-icon" />
-          <div>
+        <section className="pinned-alert-banner">
+          <div className="pinned-alert-icon-box">
+            <FaBullhorn />
+          </div>
+          <div className="pinned-alert-body">
             <span className="badge">Pinned Announcement</span>
             <h2>{pinnedAnnouncement.title}</h2>
             <p>{pinnedAnnouncement.content}</p>

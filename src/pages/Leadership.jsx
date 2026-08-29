@@ -17,48 +17,56 @@ export default function Leadership() {
 
       <div className="leadership-grid">
         {leaders.length === 0 ? (
-          <div className="empty-state-card glass-card">
-            <FaUsers className="empty-icon" />
-            <h3>Leadership Information Coming Soon</h3>
-            <p>Our pastoral and leadership details are currently being updated.</p>
-          </div>
-        ) : (
-          leaders.map((leader) => (
-            <article key={leader.id} className="leader-card glass-card">
-              <div className="leader-photo-wrap">
-                {leader.imageUrl ? (
-                  <img
-                    src={assetUrl(leader.imageUrl)}
-                    alt={leader.name}
-                    className="leader-img"
-                    onError={(e) => {
-                      e.target.style.display = 'none'
-                      const parent = e.target.parentElement
-                      if (parent) {
-                        const fallback = parent.querySelector('.leader-placeholder-circle')
-                        if (fallback) fallback.style.display = 'flex'
-                      }
-                    }}
-                  />
-                ) : null}
-                <div
-                  className="leader-placeholder-circle"
-                  style={{ display: leader.imageUrl ? 'none' : 'flex' }}
-                >
-                  <FaUser />
-                </div>
-                <div className="leader-crown-badge">
-                  <FaCrown />
-                </div>
+          <article className="leader-card leader-card-featured glass-card">
+            <div className="leader-photo-wrap">
+              <div className="leader-img-container">
+                <img
+                  src="/go-pastor.jpg"
+                  alt="General Overseer"
+                  className="leader-img"
+                />
               </div>
+              <div className="leader-crown-badge">
+                <FaCrown />
+              </div>
+            </div>
 
-              <div className="leader-info">
-                <span className="leader-role-badge">{leader.role || 'Church Leader'}</span>
-                <h2 className="leader-name">{leader.name}</h2>
-                <p className="leader-bio">{leader.bio || 'Serving God’s ministry with passion, wisdom, and love.'}</p>
-              </div>
-            </article>
-          ))
+            <div className="leader-info">
+              <span className="leader-role-badge">Senior Pastor &amp; General Overseer</span>
+              <h2 className="leader-name">Rev. Dr. Patrick Ogar</h2>
+              <p className="leader-bio">Leading Christ Chosen Assembly Ministry with vision, faith, and dedication to God’s word and community service.</p>
+            </div>
+          </article>
+        ) : (
+          leaders.map((leader) => {
+            const isFeatured = (leader.role || '').toLowerCase().includes('general overseer') || (leader.role || '').toLowerCase().includes('senior pastor')
+            return (
+              <article key={leader.id} className={`leader-card glass-card ${isFeatured ? 'leader-card-featured' : ''}`}>
+                <div className="leader-photo-wrap">
+                  <div className="leader-img-container">
+                    <img
+                      src={assetUrl(leader.imageUrl) || '/go-pastor.jpg'}
+                      alt={leader.name}
+                      className="leader-img"
+                      onError={(e) => {
+                        e.target.onerror = null
+                        e.target.src = '/go-pastor.jpg'
+                      }}
+                    />
+                  </div>
+                  <div className="leader-crown-badge">
+                    <FaCrown />
+                  </div>
+                </div>
+
+                <div className="leader-info">
+                  <span className="leader-role-badge">{leader.role || 'Church Leader'}</span>
+                  <h2 className="leader-name">{leader.name}</h2>
+                  <p className="leader-bio">{leader.bio || 'Serving God’s ministry with passion, wisdom, and love.'}</p>
+                </div>
+              </article>
+            )
+          })
         )}
       </div>
 

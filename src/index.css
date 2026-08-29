@@ -1,44 +1,47 @@
 :root {
-  /* Main Theme Colors */
+  /* Royal Purple Palette */
   --primary: #6d28d9;
-  --primary-dark: #4c1d95;
+  --primary-dark: #3b0764;
+  --primary-deep: #2e1065;
   --primary-light: #f3e8ff;
 
-  --gold: #b45309;
-  --gold-deep: #7c3d00;
-  --gold-soft: #fef3c7;
-  --gold-warm: #f6c453;
-  --gold-glow: rgba(180, 83, 9, 0.22);
+  /* Radiant Gold Sheen Palette */
+  --gold: #f59e0b;
+  --gold-dark: #d97706;
+  --gold-light: #fde047;
+  --gold-soft: #fef08a;
+  --gold-cream: #fffbeb;
+  --gold-glow: rgba(245, 158, 11, 0.3);
 
-  /* Secondary Palette */
+  /* Secondary & Surface Colors */
   --purple: #6d28d9;
-  --purple-dark: #4c1d95;
-  --purple-soft: #ede9fe;
+  --purple-dark: #3b0764;
+  --purple-soft: #f3e8ff;
   --white: #ffffff;
-  --white-soft: #fffdf8;
+  --white-soft: #f8fafc;
 
   /* Typography */
-  --text: #111111;
-  --text-soft: #2c2c2c;
-  --text-h: #7c3d00;
-  --text-muted: #5a3a18;
+  --text: #1e1b4b;
+  --text-soft: #334155;
+  --text-h: #2e1065;
+  --text-muted: #64748b;
 
   /* Main Backgrounds */
-  --bg: linear-gradient(135deg, #fffaf0 0%, #fef3c7 20%, #f6d365 45%, #b45309 100%);
-  --bg-alt: #f7e7b5;
-  --bg-card: #fffdf8;
-  --surface: rgba(255, 255, 255, 0.88);
-  --border: rgba(124, 61, 0, 0.2);
-  --border-gold: rgba(180, 83, 9, 0.35);
+  --bg: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 35%, #fffbeb 80%, #fef3c7 100%);
+  --bg-alt: #f3e8ff;
+  --bg-card: #ffffff;
+  --surface: rgba(255, 255, 255, 0.94);
+  --border: rgba(109, 40, 217, 0.2);
+  --border-gold: rgba(245, 158, 11, 0.4);
 
   /* Shadows */
-  --shadow-sm: 0 2px 10px rgba(124, 61, 0, 0.08);
-  --shadow: 0 14px 32px rgba(124, 61, 0, 0.14), 0 4px 12px rgba(180, 83, 9, 0.08);
-  --shadow-lg: 0 20px 45px rgba(76, 29, 149, 0.18), 0 10px 24px rgba(180, 83, 9, 0.12);
+  --shadow-sm: 0 4px 14px rgba(109, 40, 217, 0.06);
+  --shadow: 0 14px 35px rgba(109, 40, 217, 0.12), 0 4px 12px rgba(245, 158, 11, 0.1);
+  --shadow-lg: 0 20px 50px rgba(46, 16, 101, 0.2), 0 10px 24px rgba(245, 158, 11, 0.15);
 
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text);
   background: var(--bg);
   background-attachment: fixed;

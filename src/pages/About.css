@@ -5,42 +5,45 @@
 .about-hero-card {
   position: relative;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2.25rem;
   margin-bottom: 2.5rem;
   overflow: hidden;
-  background: var(--bg);
-  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(46, 16, 101, 0.96) 0%, rgba(76, 29, 149, 0.92) 50%, rgba(59, 7, 100, 0.96) 100%);
+  border: 2px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 18px 45px rgba(76, 29, 149, 0.35), 0 0 30px rgba(245, 158, 11, 0.2);
+  color: #ffffff;
 }
 
 .about-hero-badge {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   margin: 0 auto 1.25rem;
   border-radius: 50%;
-  background: radial-gradient(circle at top, var(--gold), var(--gold-dark));
-  color: var(--text);
+  background: linear-gradient(135deg, #f59e0b, #fef08a);
+  color: #1e1b4b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  box-shadow: 0 8px 24px rgba(212, 161, 27, 0.3);
+  font-size: 2rem;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+  border: 2px solid #ffffff;
 }
 
 .about-hero-card h2 {
   margin: 0 0 1rem;
-  color: var(--gold);
+  color: #fde047;
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.01em;
 }
 
 .about-lead {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: var(--text-h);
+  color: #f1f5f9;
   max-width: 780px;
   margin: 0 auto;
-  opacity: 0.95;
 }
 
 .about-grid {
@@ -51,46 +54,50 @@
 }
 
 .about-card {
-  padding: 2rem 1.6rem;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.2rem 1.75rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(243, 232, 255, 0.9) 100%);
+  border: 1.5px solid rgba(109, 40, 217, 0.25);
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.08);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .about-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border);
-  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+  border-color: #6d28d9;
+  box-shadow: 0 16px 36px rgba(109, 40, 217, 0.2);
 }
 
 .card-icon-badge {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.28);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(109, 40, 217, 0.12));
+  border: 1px solid rgba(245, 158, 11, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.25rem;
 }
 
 .about-icon {
-  font-size: 1.4rem;
-  color: var(--gold);
+  font-size: 1.5rem;
+  color: #d97706;
 }
 
 .about-card h3 {
   margin: 0 0 0.65rem;
-  font-size: 1.25rem;
-  color: var(--gold);
-  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2e1065;
+  font-weight: 800;
 }
 
 .about-card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   line-height: 1.7;
   color: var(--text);
 }
@@ -98,15 +105,16 @@
 .scripture-callout-card {
   text-align: center;
   padding: 2.5rem 2rem;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(107, 33, 168, 0.08));
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.12), rgba(245, 158, 11, 0.08));
+  border: 1.5px solid rgba(109, 40, 217, 0.3);
+  border-radius: 20px;
   position: relative;
 }
 
 .quote-icon {
   font-size: 2rem;
-  color: var(--gold);
-  opacity: 0.6;
+  color: #f59e0b;
+  opacity: 0.85;
   margin-bottom: 1rem;
 }
 
@@ -114,15 +122,16 @@
   margin: 0 0 0.8rem;
   font-size: 1.25rem;
   font-style: italic;
-  color: var(--gold-light);
+  color: #2e1065;
   line-height: 1.6;
+  font-weight: 600;
 }
 
 .scripture-ref {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--gold);
+  font-weight: 800;
+  color: #6d28d9;
   font-style: normal;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
