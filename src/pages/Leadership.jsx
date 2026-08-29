@@ -17,26 +17,9 @@ export default function Leadership() {
 
       <div className="leadership-grid">
         {leaders.length === 0 ? (
-          <article className="leader-card leader-card-featured glass-card">
-            <div className="leader-photo-wrap">
-              <div className="leader-img-container">
-                <img
-                  src="/go-pastor.jpg"
-                  alt="General Overseer"
-                  className="leader-img"
-                />
-              </div>
-              <div className="leader-crown-badge">
-                <FaCrown />
-              </div>
-            </div>
-
-            <div className="leader-info">
-              <span className="leader-role-badge">Senior Pastor &amp; General Overseer</span>
-              <h2 className="leader-name">Rev. Dr. Patrick Ogar</h2>
-              <p className="leader-bio">Leading Christ Chosen Assembly Ministry with vision, faith, and dedication to God’s word and community service.</p>
-            </div>
-          </article>
+          <p className="empty-state" style={{ textAlign: 'center', gridColumn: '1 / -1', color: 'var(--text-muted, #888)' }}>
+            No leadership profiles available.
+          </p>
         ) : (
           leaders.map((leader) => {
             const isFeatured = (leader.role || '').toLowerCase().includes('general overseer') || (leader.role || '').toLowerCase().includes('senior pastor')
