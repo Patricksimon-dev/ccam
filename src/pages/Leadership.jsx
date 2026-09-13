@@ -8,13 +8,13 @@ export default function Leadership() {
   const { data } = useContent()
   const rawLeaders = data.leadership || []
 
-  // Find Senior Pastor / General Overseer from database if present
-  const overseerFromData = rawLeaders.find(
-    (l) =>
-      (l.role || '').toLowerCase().includes('general overseer') ||
-      (l.role || '').toLowerCase().includes('senior pastor') ||
-      (l.name || '').toLowerCase().includes('ekele')
-  )
+  const matchesPastor = (leader) => {
+    const role = (leader?.role || '').toLowerCase()
+    const name = (leader?.name || '').toLowerCase()
+    return role.includes('general overseer') || role.includes('senior pastor') || name.includes('ekele idoko') || name.includes('pastor ekele')
+  }
+
+  const overseerFromData = rawLeaders.find((leader) => matchesPastor(leader))
 
   const overseer = overseerFromData || {
     id: 'built-in-pastor',
@@ -24,7 +24,7 @@ export default function Leadership() {
     imageUrl: '/go-pastor.jpg',
   }
 
-  const teamMembers = rawLeaders.filter((l) => l.id !== overseer.id)
+  const teamMembers = rawLeaders.filter((leader) => !matchesPastor(leader) && leader.id !== overseer.id)
 
   return (
     <div className="page leadership-page">
