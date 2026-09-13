@@ -29,7 +29,7 @@ export default function Donation() {
               <FaCreditCard className="card-chip-icon" />
               <span>OFFERING & TITHE TRANSFER</span>
             </div>
-            <span className="bank-card-badge">First Bank</span>
+            <span className="bank-card-badge">Access Bank</span>
           </div>
 
           <div className="bank-card-body">
@@ -55,7 +55,7 @@ export default function Donation() {
               </div>
               <div className="card-detail-item">
                 <span className="card-label"><FaBuilding /> BANK NAME</span>
-                <strong className="card-val">First Bank Nigeria</strong>
+                <strong className="card-val">Access Bank</strong>
               </div>
             </div>
           </div>

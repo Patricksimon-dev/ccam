@@ -53,7 +53,7 @@ export default function App() {
                 </button>
 
                 <div className="welcome-logo-badge" aria-hidden="true">
-                  <img src="/logo1.png" alt="Christ Chosen Assembly Ministry logo" className="welcome-logo-image" />
+                  <img src="/logo_official.png" alt="Christ Chosen Assembly Ministry logo" className="welcome-logo-image" />
                 </div>
 
                 <h1>Welcome to Christ Chosen Assembly Ministry</h1>

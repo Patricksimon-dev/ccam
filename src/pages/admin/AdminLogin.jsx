@@ -48,7 +48,7 @@ export default function AdminLogin() {
     <div className="login-page">
       <form className="login-card" onSubmit={handleSubmit(onSubmit)}>
         <div className="login-logo-badge">
-          <img src="/logo1.png" alt="Christ Chosen Assembly Ministry Logo" className="login-logo-img" />
+          <img src="/logo_official.png" alt="Christ Chosen Assembly Ministry Logo" className="login-logo-img" />
           <div className="login-church-icon-overlay">
             <FaChurch />
           </div>

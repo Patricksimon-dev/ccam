@@ -28,7 +28,7 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img src="/logo1.png" alt="Logo" className="logo-image" />
+            <img src="/logo_official.png" alt="Logo" className="logo-image" />
           <span className="logo-text">Christ Chosen Assembly Ministry</span>
           <span className="logo-text-short">CCAM</span>
         </Link>

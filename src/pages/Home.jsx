@@ -21,8 +21,8 @@ export default function Home() {
           <div className="hero-branding">
             <h1>CHRIST CHOSEN</h1>
             <h2>ASSEMBLY MINISTRY</h2>
-            <img src="/logo1.png" alt="Christ Chosen Assembly Ministry logo" className="hero-logo" />
-            <p className="hero-verse">Surely Jesus is Alive — Rev 1:8</p>
+            <img src="/logo_official.png" alt="Christ Chosen Assembly Ministry logo" className="hero-logo" />
+            <p className="hero-verse">Surely Jesus is Alive — Rev 1:18</p>
           </div>
           <p className="hero-subtitle">
             A place of worship, fellowship, and spiritual growth for all.
