@@ -5,6 +5,15 @@
   --primary-deep: #2e1065;
   --primary-light: #f3e8ff;
 
+  /* Navigation / Header */
+  --nav-bg: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary-dark) 60%);
+  --nav-text: #ffffff;
+  --nav-link: rgba(241,245,249,0.95);
+  --nav-link-hover-bg: rgba(255,255,255,0.06);
+  --nav-link-hover-text: var(--gold-light);
+  --nav-link-active-bg: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  --nav-link-active-text: #111827;
+
   /* Radiant Gold Sheen Palette */
   --gold: #f59e0b;
   --gold-dark: #d97706;
