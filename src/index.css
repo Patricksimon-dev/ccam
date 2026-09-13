@@ -484,10 +484,12 @@ button {
 
 .contact-subtitle {
   margin: 0 0 1.5rem;
-  color: #f3e8ff;
-  max-width: 34rem;
-  font-size: 1.02rem;
+  color: #111827; /* darker text to stand out */
+  max-width: none; /* allow full width so all text is visible */
+  width: 100%;
+  font-size: 1.04rem;
   line-height: 1.6;
+  font-weight: 600;
 }
 
 .contact-highlights {

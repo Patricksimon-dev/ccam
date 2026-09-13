@@ -24,12 +24,12 @@ export default function Donation() {
       {/* Main Digital Bank Card */}
       <section className="donation-card-container">
         <article className="bank-card-wrapper glass-card">
-          <div className="bank-card-header">
+            <div className="bank-card-header">
             <div className="bank-card-brand">
               <FaCreditCard className="card-chip-icon" />
               <span>OFFERING & TITHE TRANSFER</span>
             </div>
-            <span className="bank-card-badge">Access Bank</span>
+            <span className="bank-card-badge">First Bank</span>
           </div>
 
           <div className="bank-card-body">
@@ -55,7 +55,7 @@ export default function Donation() {
               </div>
               <div className="card-detail-item">
                 <span className="card-label"><FaBuilding /> BANK NAME</span>
-                <strong className="card-val">Access Bank</strong>
+                <strong className="card-val">First Bank</strong>
               </div>
             </div>
           </div>
