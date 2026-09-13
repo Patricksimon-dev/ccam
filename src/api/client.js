@@ -23,14 +23,24 @@ export function assetUrl(value) {
     cleanPath = '/' + cleanPath
   }
 
+  const isApiAsset = cleanPath.startsWith('/api/')
+  const isPublicAsset = !isApiAsset
+
   if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+    return isApiAsset ? `${window.location.origin}${cleanPath}` : cleanPath
+  }
+
+  if (isApiAsset) {
+    const apiBase = api.defaults.baseURL || '/api'
+    if (/^https?:\/\//i.test(apiBase)) {
+      const origin = new URL(apiBase).origin
+      return `${origin}${cleanPath}`
+    }
     return cleanPath
   }
 
-  const apiBase = api.defaults.baseURL || '/api'
-  if (/^https?:\/\//i.test(apiBase)) {
-    const origin = new URL(apiBase).origin
-    return `${origin}${cleanPath}`
+  if (isPublicAsset && typeof window !== 'undefined') {
+    return `${window.location.origin}${cleanPath}`
   }
 
   return cleanPath

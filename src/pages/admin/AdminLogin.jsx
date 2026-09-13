@@ -12,7 +12,7 @@ export default function AdminLogin() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit } = useForm({
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: 'admin@gracechurch.org', password: 'admin123' },
   })
 
   if (authLoading) {
@@ -56,6 +56,9 @@ export default function AdminLogin() {
 
         <h1>Admin Portal</h1>
         <p className="login-subtitle">Sign in to manage Christ Chosen Assembly Ministry</p>
+        <p className="login-footer-text" style={{ marginTop: 0, marginBottom: '1.25rem' }}>
+          Demo admin: admin@gracechurch.org / admin123
+        </p>
 
         {error && <div className="login-error">{error}</div>}
 
