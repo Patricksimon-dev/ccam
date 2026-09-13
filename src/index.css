@@ -1,9 +1,9 @@
 :root {
   /* Royal Purple Palette */
-  --primary: #6d28d9;
-  --primary-dark: #3b0764;
-  --primary-deep: #2e1065;
-  --primary-light: #f3e8ff;
+  --primary: #5b42a6;
+  --primary-dark: #3e2a66;
+  --primary-deep: #35214f;
+  --primary-light: #efe9fb;
 
   /* Navigation / Header */
   --nav-bg: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary-dark) 60%);
@@ -23,9 +23,9 @@
   --gold-glow: rgba(245, 158, 11, 0.3);
 
   /* Secondary & Surface Colors */
-  --purple: #6d28d9;
-  --purple-dark: #3b0764;
-  --purple-soft: #f3e8ff;
+  --purple: #5b42a6;
+  --purple-dark: #3e2a66;
+  --purple-soft: #efe9fb;
   --white: #ffffff;
   --white-soft: #f8fafc;
 
@@ -44,9 +44,9 @@
   --border-gold: rgba(245, 158, 11, 0.4);
 
   /* Shadows */
-  --shadow-sm: 0 4px 14px rgba(109, 40, 217, 0.06);
-  --shadow: 0 14px 35px rgba(109, 40, 217, 0.12), 0 4px 12px rgba(245, 158, 11, 0.1);
-  --shadow-lg: 0 20px 50px rgba(46, 16, 101, 0.2), 0 10px 24px rgba(245, 158, 11, 0.15);
+  --shadow-sm: 0 4px 14px rgba(91, 66, 166, 0.06);
+  --shadow: 0 14px 35px rgba(91, 66, 166, 0.10), 0 4px 12px rgba(245, 158, 11, 0.08);
+  --shadow-lg: 0 20px 50px rgba(53, 33, 95, 0.18), 0 10px 24px rgba(245, 158, 11, 0.12);
 
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 16px;
