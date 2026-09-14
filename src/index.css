@@ -484,7 +484,7 @@ button {
 
 .contact-subtitle {
   margin: 0 0 1.5rem;
-  color: #111827; /* darker text to stand out */
+  color: var(--gold); /* make contact subtitle gold */
   max-width: none; /* allow full width so all text is visible */
   width: 100%;
   font-size: 1.04rem;
