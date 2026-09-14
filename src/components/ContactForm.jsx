@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { FaPaperPlane, FaHandsHelping, FaCalendarAlt, FaEnvelope, FaUser, FaTag, FaCommentAlt, FaSpinner } from 'react-icons/fa';
+import {
+  FaPaperPlane,
+  FaHandsHelping,
+  FaCalendarAlt,
+  FaEnvelope,
+  FaUser,
+  FaTag,
+  FaCommentAlt,
+  FaSpinner,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaClock,
+  FaHeart,
+} from 'react-icons/fa';
 import { api } from '../api/client';
 
 export default function ContactForm() {
@@ -32,10 +45,10 @@ export default function ContactForm() {
       <div className="contact-shell">
         <div className="contact-copy">
           <span className="section-eyebrow">Get in touch</span>
-          <h2 className="section-title">Send Us a Message</h2>
+          <h2 className="section-title">We’d love to connect with you</h2>
           <p className="contact-subtitle">
-            We would love to hear from you. Reach out for prayer requests, church inquiries,
-            counseling, or ways to connect with our community.
+            Whether you are seeking prayer, guidance, fellowship, or answers about our church,
+            we are here to welcome you with love and support.
           </p>
 
           <div className="contact-highlights">
@@ -44,23 +57,66 @@ export default function ContactForm() {
                 <FaHandsHelping />
               </div>
               <div>
-                <span className="highlight-title">Prayer & Pastoral Support</span>
-                <span>Share your prayer needs and our pastoral team will stand with you in faith.</span>
+                <span className="highlight-title">Prayer & pastoral care</span>
+                <span>Share your prayer needs or personal requests and our team will stand with you.</span>
               </div>
             </div>
+
             <div className="contact-highlight">
               <div className="highlight-icon-wrap">
                 <FaCalendarAlt />
               </div>
               <div>
-                <span className="highlight-title">Weekly Fellowship</span>
-                <span>Inquire about service times, locations, ministries, and upcoming events.</span>
+                <span className="highlight-title">Service & ministry info</span>
+                <span>Ask about worship times, upcoming events, Bible study, and how to get involved.</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-info-panel">
+            <div className="contact-info-item">
+              <span className="info-icon"><FaMapMarkerAlt /></span>
+              <div>
+                <strong>Location</strong>
+                <p>No 15 Anikulapo Street, Agege, Lagos, Nigeria</p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <span className="info-icon"><FaPhone /></span>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:+2349012484878">+234 901 248 4878</a></p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <span className="info-icon"><FaEnvelope /></span>
+              <div>
+                <strong>Email</strong>
+                <p><a href="mailto:christchosenassemblymin@gmail.com">christchosenassemblymin@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div className="contact-info-item">
+              <span className="info-icon"><FaClock /></span>
+              <div>
+                <strong>Worship schedule</strong>
+                <p>Sunday: 8:30 AM &nbsp;•&nbsp; Wednesday: 7:00 PM</p>
               </div>
             </div>
           </div>
         </div>
 
         <form onSubmit={handleSubmit} className="contact-form">
+          <div className="contact-form-header">
+            <div>
+              <span className="mini-label">Send a message</span>
+              <h3>Contact form</h3>
+            </div>
+            <span className="heart-badge"><FaHeart /></span>
+          </div>
+
           <div className="form-grid">
             <label className="form-field">
               <span><FaUser className="field-icon" /> Full Name</span>

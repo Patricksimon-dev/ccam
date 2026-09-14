@@ -30,7 +30,11 @@ export function ContentProvider({ children }) {
     setError(null)
     try {
       const { data: content } = await api.get('/content')
-      setData(content)
+      setData({
+        ...emptyData,
+        ...(content || {}),
+        about: content?.about || { ...emptyData.about },
+      })
     } catch (err) {
       setError(err.response?.data?.error || 'Could not load content. Is the API server running?')
     } finally {

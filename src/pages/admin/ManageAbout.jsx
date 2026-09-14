@@ -15,11 +15,19 @@ const fields = [
 
 export default function ManageAbout() {
   const { data, updateAbout, deleteAbout } = useContent()
-  const { register, handleSubmit, reset } = useForm({ defaultValues: data.about })
+  const defaultAbout = data?.about || {
+    welcomeTitle: '',
+    welcomeText: '',
+    mission: '',
+    vision: '',
+    history: '',
+    values: '',
+  }
+  const { register, handleSubmit, reset } = useForm({ defaultValues: defaultAbout })
 
   useEffect(() => {
-    reset(data.about)
-  }, [data.about, reset])
+    reset(defaultAbout)
+  }, [defaultAbout, reset])
 
   const onSubmit = async (formData) => {
     try {

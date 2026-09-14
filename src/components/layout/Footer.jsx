@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-col footer-branding">
           <div className="footer-logo-wrap">
-            <img src="/IQUP2627.JPG" alt="Christ Chosen Assembly Ministry logo" className="footer-logo" />
+            <img src="/logo.jpg" alt="Christ Chosen Assembly Ministry logo" className="footer-logo" />
           </div>
           <h3 className="footer-title">Christ Chosen Assembly Ministry</h3>
           <p className="footer-tagline">
