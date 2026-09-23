@@ -33,7 +33,11 @@
 .logo-image {
   height: 44px;
   width: auto;
+  max-width: 52px;
   object-fit: contain;
+  display: block;
+  background: transparent;
+  border-radius: 50%;
   filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.4));
 }
 
@@ -97,7 +101,7 @@
   font-weight: 800;
   box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
 }
-  }
+
 
   .mobile-toggle {
     display: flex;
@@ -138,7 +142,7 @@
     color: var(--text);
     border-color: rgba(255, 255, 255, 0.12);
   }
-}
+
 
 @media (max-width: 480px) {
   .logo-text {
