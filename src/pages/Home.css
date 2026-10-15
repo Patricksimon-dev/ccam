@@ -409,14 +409,14 @@
   color: var(--gold-dark);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .welcome-alert-banner {
-    margin: 1.75rem 1rem;
-    padding: 1.85rem 1.6rem;
+    margin: 1.75rem 1.1rem;
+    padding: 1.9rem 1.7rem;
   }
 
   .welcome-alert-title {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -443,8 +443,16 @@
   }
 
   .welcome-alert-banner {
-    padding: 1.5rem 1.25rem;
-    border-radius: 16px;
+    padding: 1.6rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .welcome-alert-header {
+    margin-bottom: 1rem;
+  }
+
+  .welcome-alert-body {
+    text-align: left;
   }
 
   .welcome-alert-actions {
@@ -472,17 +480,17 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .hero {
     padding: 2.2rem 1rem 2rem;
   }
 
   .hero-branding h1 {
-    font-size: 1.65rem;
+    font-size: 1.8rem;
   }
 
   .hero-branding h2 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .hero-logo {
@@ -501,7 +509,7 @@
   }
 
   .welcome-alert-title {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .welcome-highlights-row {
@@ -526,9 +534,9 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 390px) {
   .hero-branding h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .hero-branding h2 {
@@ -542,6 +550,21 @@
   .welcome-alert-banner,
   .pinned-alert-banner {
     margin: 1rem 0.5rem;
-    padding: 1.15rem 0.9rem;
+    padding: 1.1rem 0.9rem;
+  }
+
+  .welcome-alert-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .welcome-alert-title {
+    font-size: 1.2rem;
+  }
+
+  .welcome-alert-text {
+    font-size: 0.92rem;
   }
 }
