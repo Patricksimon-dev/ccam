@@ -29,7 +29,6 @@ export default function ContentManager({
   fields,
   renderItem,
   socialShare = false,
-  expiryNotice,
 }) {
   const { data, addItem, updateItem, deleteItem } = useContent()
   const items = data[collection] || []
@@ -194,7 +193,6 @@ export default function ContentManager({
         <div>
           <h1>{title}</h1>
           <p className="admin-subtitle">{items.length} item{items.length !== 1 ? 's' : ''}</p>
-          {expiryNotice && <p className="admin-subtitle">{expiryNotice}</p>}
         </div>
         <button type="button" className="btn btn-primary" onClick={openCreate}>
           <FaPlus /> Add New

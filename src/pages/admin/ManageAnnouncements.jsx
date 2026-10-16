@@ -17,7 +17,6 @@ export default function ManageAnnouncements() {
       title="Announcements"
       fields={fields}
       socialShare
-      expiryNotice="Announcements are automatically deleted one month after they are posted."
       renderItem={(item) => (
         <>
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

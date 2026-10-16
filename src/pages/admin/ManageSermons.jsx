@@ -20,7 +20,6 @@ export default function ManageSermons() {
       title="Sermons"
       fields={fields}
       socialShare
-      expiryNotice="Sermons are automatically deleted one month after they are posted."
       renderItem={(item) => (
         <>
           <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
